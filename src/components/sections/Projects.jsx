@@ -1,4 +1,11 @@
+import { useRef } from 'react';
+import { useGSAP } from '../../hooks/useGSAP';
+import { fadeIn, staggerFadeIn } from '../../utils/scrollAnimations';
+
 const Projects = () => {
+  // Refs untuk target animasi
+  const headingRef = useRef(null);
+  const projectsRef = useRef(null);
   const projects = [
     {
       title: 'E-Commerce Platform',
@@ -38,16 +45,34 @@ const Projects = () => {
     },
   ];
 
+  // Setup GSAP animations
+  useGSAP(() => {
+    // Animasi heading
+    fadeIn(headingRef.current, {
+      duration: 1,
+      start: "top 80%",
+    });
+
+    // Animasi project cards - stagger
+    staggerFadeIn(projectsRef.current.children, {
+      duration: 0.8,
+      delay: 0.2,
+      stagger: 0.15,
+      direction: "bottom",
+      start: "top 75%",
+    });
+  }, []);
+
   return (
     <section id="projects" className="min-h-screen flex items-center py-20 bg-gray-900">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
-        <h2 className="text-4xl sm:text-5xl font-bold text-center mb-12">
+        <h2 ref={headingRef} className="text-4xl sm:text-5xl font-bold text-center mb-12">
           <span className="bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text text-transparent">
             Featured Projects
           </span>
         </h2>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div ref={projectsRef} className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {projects.map((project, idx) => (
             <div
               key={idx}

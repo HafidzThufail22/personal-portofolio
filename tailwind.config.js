@@ -6,6 +6,10 @@ export default {
   ],
   theme: {
     extend: {
+      fontFamily: {
+        'heading': ['Poppins', 'sans-serif'],
+        'body': ['Open Sans', 'sans-serif'],
+      },
       animation: {
         'fade-in': 'fadeIn 1s ease-in-out',
         'slide-up': 'slideUp 0.5s ease-out',
