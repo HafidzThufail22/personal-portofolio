@@ -15,25 +15,9 @@ import {
   SiFigma,
   SiGithub,
   SiGit,
+  SiCoreldraw,
 } from "react-icons/si";
-
-// Custom icon untuk VS Code
-const VSCodeIcon = ({ className }) => (
-  <div className={className} style={{ fontSize: 'inherit' }}>
-    <svg viewBox="0 0 24 24" fill="currentColor" style={{ width: '1em', height: '1em' }}>
-      <path d="M23.15 2.587L18.21.21a1.494 1.494 0 0 0-1.705.29l-9.46 8.63-4.12-3.128a.999.999 0 0 0-1.276.057L.327 7.261A1 1 0 0 0 .326 8.74L3.899 12 .326 15.26a1 1 0 0 0 .001 1.479L1.65 17.94a.999.999 0 0 0 1.276.057l4.12-3.128 9.46 8.63a1.492 1.492 0 0 0 1.704.29l4.942-2.377A1.5 1.5 0 0 0 24 20.06V3.939a1.5 1.5 0 0 0-.85-1.352zm-5.146 14.861L10.826 12l7.178-5.448v10.896z"/>
-    </svg>
-  </div>
-);
-
-// Custom icon untuk CorelDRAW
-const CorelDrawIcon = ({ className }) => (
-  <div className={className} style={{ fontSize: 'inherit' }}>
-    <svg viewBox="0 0 24 24" fill="currentColor" style={{ width: '1em', height: '1em' }}>
-      <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm-1-13h2v6h-2zm0 8h2v2h-2z"/>
-    </svg>
-  </div>
-);
+import { VscCode } from "react-icons/vsc";
 
 const Skills = () => {
   const headingRef = useRef(null);
@@ -51,12 +35,16 @@ const Skills = () => {
     { name: "MySQL", Icon: SiMysql, iconColor: "text-[#4479A1]" },
     { name: "Figma", Icon: SiFigma, iconColor: "text-[#F24E1E]" },
     { name: "Canva", Icon: SiCanva, iconColor: "text-[#00C4CC]" },
-    { name: "CorelDRAW", Icon: CorelDrawIcon, iconColor: "text-[#00AA00]" },
-    { name: "VS Code", Icon: VSCodeIcon, iconColor: "text-[#007ACC]" },
+    { name: "CorelDRAW", Icon: SiCoreldraw, iconColor: "text-[#00AA00]" },
+    { name: "VS Code", Icon: VscCode, iconColor: "text-[#007ACC]" },
     { name: "GitHub", Icon: SiGithub, iconColor: "text-white" },
     { name: "Git", Icon: SiGit, iconColor: "text-[#F05032]" },
     { name: "Vercel", Icon: SiVercel, iconColor: "text-white" },
   ];
+
+  // Bagi menjadi 2 baris
+  const topRow = techStack.slice(0, 8);
+  const bottomRow = techStack.slice(8);
 
   // Setup GSAP animations
   useGSAP(() => {
@@ -87,51 +75,89 @@ const Skills = () => {
           </span>
         </h2>
 
-        {/* Scrolling Container */}
-        <div ref={scrollRef} className="w-full overflow-hidden relative py-8">
-          {/* Fade gradients */}
-          <div className="absolute left-0 top-0 bottom-0 w-32 bg-gradient-to-r from-gray-800 to-transparent z-10 pointer-events-none"></div>
-          <div className="absolute right-0 top-0 bottom-0 w-32 bg-gradient-to-l from-gray-800 to-transparent z-10 pointer-events-none"></div>
+        {/* Scrolling Container - 2 Rows */}
+        <div ref={scrollRef} className="w-full space-y-6">
+          {/* Baris Atas - Kanan ke Kiri */}
+          <div className="w-full overflow-hidden relative">
+            <div className="absolute left-0 top-0 bottom-0 w-32 bg-gradient-to-r from-gray-800 to-transparent z-10 pointer-events-none"></div>
+            <div className="absolute right-0 top-0 bottom-0 w-32 bg-gradient-to-l from-gray-800 to-transparent z-10 pointer-events-none"></div>
 
-          {/* Scrolling track - pause on hover */}
-          <div className="flex gap-6 animate-scroll-horizontal hover:pause-scroll">
-            {[1, 2].map((set) =>
-              techStack.map((tech, index) => (
-                <div
-                  key={`tech-${set}-${index}`}
-                  className="flex-shrink-0 w-40 h-40 bg-gradient-to-br from-gray-900 to-gray-950 rounded-2xl border border-gray-700 hover:border-blue-500 flex flex-col items-center justify-center gap-4 p-6 shadow-xl hover:shadow-2xl hover:shadow-blue-500/20 transition-all duration-300 cursor-default group"
-                >
-                  <tech.Icon
-                    className={`text-6xl ${tech.iconColor} group-hover:scale-110 transition-transform duration-300`}
-                  />
-                  <span className="text-gray-300 text-sm font-medium text-center group-hover:text-white transition-colors">
-                    {tech.name}
-                  </span>
-                </div>
-              ))
-            )}
+            <div className="flex gap-6 animate-scroll-right-to-left hover:pause-scroll">
+              {[1, 2, 3].map((set) =>
+                topRow.map((tech, index) => (
+                  <div
+                    key={`top-${set}-${index}`}
+                    className="flex-shrink-0 w-40 h-40 bg-gradient-to-br from-gray-900 to-gray-950 rounded-2xl border border-gray-700 hover:border-blue-500 flex flex-col items-center justify-center gap-4 p-6 shadow-xl hover:shadow-2xl hover:shadow-blue-500/20 transition-all duration-300 cursor-default group"
+                  >
+                    <tech.Icon
+                      className={`text-6xl ${tech.iconColor} group-hover:scale-110 transition-transform duration-300`}
+                    />
+                    <span className="text-gray-300 text-sm font-medium text-center group-hover:text-white transition-colors">
+                      {tech.name}
+                    </span>
+                  </div>
+                ))
+              )}
+            </div>
+          </div>
+
+          {/* Baris Bawah - Kiri ke Kanan */}
+          <div className="w-full overflow-hidden relative">
+            <div className="absolute left-0 top-0 bottom-0 w-32 bg-gradient-to-r from-gray-800 to-transparent z-10 pointer-events-none"></div>
+            <div className="absolute right-0 top-0 bottom-0 w-32 bg-gradient-to-l from-gray-800 to-transparent z-10 pointer-events-none"></div>
+
+            <div className="flex gap-6 animate-scroll-left-to-right hover:pause-scroll">
+              {[1, 2, 3].map((set) =>
+                bottomRow.map((tech, index) => (
+                  <div
+                    key={`bottom-${set}-${index}`}
+                    className="flex-shrink-0 w-40 h-40 bg-gradient-to-br from-gray-900 to-gray-950 rounded-2xl border border-gray-700 hover:border-blue-500 flex flex-col items-center justify-center gap-4 p-6 shadow-xl hover:shadow-2xl hover:shadow-blue-500/20 transition-all duration-300 cursor-default group"
+                  >
+                    <tech.Icon
+                      className={`text-6xl ${tech.iconColor} group-hover:scale-110 transition-transform duration-300`}
+                    />
+                    <span className="text-gray-300 text-sm font-medium text-center group-hover:text-white transition-colors">
+                      {tech.name}
+                    </span>
+                  </div>
+                ))
+              )}
+            </div>
           </div>
         </div>
 
         {/* Info text */}
-        {/* <p className="text-center text-gray-400 mt-4 text-sm">
-          🎯 Hover to pause • ∞ Infinite scroll animation
-        </p> */}
+        <p className="text-center text-gray-400 mt-8 text-sm">
+          🎯 Hover to pause animation
+        </p>
       </div>
 
       {/* CSS Animation */}
       <style>{`
-        @keyframes scroll-horizontal {
+        @keyframes scroll-right-to-left {
           0% {
             transform: translateX(0);
           }
           100% {
-            transform: translateX(-50%);
+            transform: translateX(calc(-100% / 3));
           }
         }
 
-        .animate-scroll-horizontal {
-          animation: scroll-horizontal 30s linear infinite;
+        @keyframes scroll-left-to-right {
+          0% {
+            transform: translateX(calc(-100% / 3));
+          }
+          100% {
+            transform: translateX(0);
+          }
+        }
+
+        .animate-scroll-right-to-left {
+          animation: scroll-right-to-left 30s linear infinite;
+        }
+
+        .animate-scroll-left-to-right {
+          animation: scroll-left-to-right 30s linear infinite;
         }
 
         .pause-scroll:hover {

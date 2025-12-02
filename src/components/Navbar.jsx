@@ -28,7 +28,10 @@ const Navbar = () => {
       });
     };
 
-    const observer = new IntersectionObserver(observerCallback, observerOptions);
+    const observer = new IntersectionObserver(
+      observerCallback,
+      observerOptions
+    );
 
     // Observe all sections
     const sections = document.querySelectorAll("section[id]");
@@ -62,7 +65,7 @@ const Navbar = () => {
                   />
                 </svg>
               </div>
-              <a href="#home" className="text-xl font-bold text-white">
+              <a href="#" className="text-xl font-bold text-white">
                 Portfolio
               </a>
             </div>
