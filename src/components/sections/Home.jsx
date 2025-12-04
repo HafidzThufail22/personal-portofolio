@@ -1,64 +1,15 @@
-import { useRef } from "react";
-import gsap from "gsap";
+import { useState, useEffect } from "react";
 import Particles from "../Particles";
 import TrueFocus from "../TrueFocus";
-import { useGSAP } from "../../hooks/useGSAP";
 
 const Home = () => {
-  // Refs untuk target animasi
-  const headingRef = useRef(null);
-  const trueFocusRef = useRef(null);
-  const descriptionRef = useRef(null);
-  const buttonsRef = useRef(null);
+  // Simple state untuk trigger animations on mount
+  const [isLoaded, setIsLoaded] = useState(false);
 
-  // Setup GSAP animations
-  useGSAP(() => {
-    // Animasi langsung tanpa ScrollTrigger
-    // Home section tidak perlu ScrollTrigger karena selalu visible saat page load
-
-    // Animasi heading - fade in dari opacity 0
-    gsap.from(headingRef.current, {
-      opacity: 0,
-      duration: 1.2,
-      delay: 0.3,
-      ease: "power3.out",
-    });
-
-    // Animasi TrueFocus - slide in dari bawah
-    gsap.from(trueFocusRef.current, {
-      y: 50,
-      opacity: 0,
-      duration: 1,
-      delay: 0.6,
-      ease: "power3.out",
-    });
-
-    // Animasi description - fade in
-    gsap.from(descriptionRef.current, {
-      opacity: 0,
-      duration: 1,
-      delay: 0.9,
-      ease: "power3.out",
-    });
-
-    // Animasi buttons - stagger (muncul berurutan)
-    // Gunakan fromTo untuk memastikan end state opacity = 1
-    gsap.fromTo(
-      buttonsRef.current.children,
-      {
-        y: 20,
-        opacity: 0,
-      },
-      {
-        y: 0,
-        opacity: 1,
-        duration: 0.8,
-        delay: 1.2,
-        stagger: 0.2,
-        ease: "power3.out",
-      }
-    );
-  }, []); // Empty dependency array = animasi hanya run sekali saat mount
+  useEffect(() => {
+    // Trigger animations setelah component mount
+    setIsLoaded(true);
+  }, []);
 
   return (
     <section
@@ -85,8 +36,10 @@ const Home = () => {
       {/* Content */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-20 py-8 sm:py-0">
         <h1
-          ref={headingRef}
-          className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold mb-6"
+          className={`text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold mb-6 fade-in ${
+            isLoaded ? "is-visible" : ""
+          }`}
+          style={{ transitionDelay: "0.3s" }}
         >
           <span className="bg-gradient-to-r from-blue-300 via-blue-500 to-cyan-400 bg-clip-text text-transparent">
             Hi, I'm Hafidz Thufail Nur Ikhsan
@@ -94,7 +47,10 @@ const Home = () => {
         </h1>
 
         {/* TrueFocus Animation */}
-        <div ref={trueFocusRef} className="mb-8">
+        <div
+          className={`mb-8 slide-up ${isLoaded ? "is-visible" : ""}`}
+          style={{ transitionDelay: "0.6s" }}
+        >
           <TrueFocus
             sentence="Informatics Student | UI/UX Designer | Front-End Enthusiast"
             separator=" | "
@@ -108,15 +64,18 @@ const Home = () => {
         </div>
 
         <p
-          ref={descriptionRef}
-          className="text-lg text-gray-400 mb-12 max-w-2xl mx-auto"
+          className={`text-lg text-gray-400 mb-12 max-w-2xl mx-auto fade-in ${
+            isLoaded ? "is-visible" : ""
+          }`}
+          style={{ transitionDelay: "0.9s" }}
         >
           I craft intuitive digital interfaces that blend clean design with
           seamless front-end experiences.
         </p>
         <div
-          ref={buttonsRef}
-          className="flex flex-col sm:flex-row gap-4 justify-center"
+          className={`flex flex-col sm:flex-row gap-4 justify-center stagger-children ${
+            isLoaded ? "is-visible" : ""
+          }`}
         >
           <a
             href="#projects"
