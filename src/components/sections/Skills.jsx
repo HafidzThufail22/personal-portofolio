@@ -1,6 +1,4 @@
-import { useRef } from "react";
-import { useGSAP } from "../../hooks/useGSAP";
-import { fadeIn } from "../../utils/scrollAnimations";
+import { useInView } from "../../hooks/useInView";
 import {
   SiHtml5,
   SiCss3,
@@ -20,8 +18,8 @@ import {
 import { VscCode } from "react-icons/vsc";
 
 const Skills = () => {
-  const headingRef = useRef(null);
-  const scrollRef = useRef(null);
+  const [headingRef, headingVisible] = useInView();
+  const [scrollRef, scrollVisible] = useInView();
 
   // Technology stack dengan logo dan warna icon
   const techStack = [
@@ -46,20 +44,6 @@ const Skills = () => {
   const topRow = techStack.slice(0, 8);
   const bottomRow = techStack.slice(8);
 
-  // Setup GSAP animations
-  useGSAP(() => {
-    fadeIn(headingRef.current, {
-      duration: 1,
-      start: "top 80%",
-    });
-
-    fadeIn(scrollRef.current, {
-      duration: 1,
-      delay: 0.3,
-      start: "top 80%",
-    });
-  }, []);
-
   return (
     <section
       id="skills"
@@ -68,7 +52,9 @@ const Skills = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
         <h2
           ref={headingRef}
-          className="text-4xl sm:text-5xl font-bold text-center mb-16"
+          className={`text-4xl sm:text-5xl font-bold text-center mb-16 fade-in ${
+            headingVisible ? "is-visible" : ""
+          }`}
         >
           <span className="bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text text-transparent">
             Skills & Technologies
@@ -76,7 +62,12 @@ const Skills = () => {
         </h2>
 
         {/* Scrolling Container - 2 Rows */}
-        <div ref={scrollRef} className="w-full space-y-6">
+        <div
+          ref={scrollRef}
+          className={`w-full space-y-6 fade-in ${
+            scrollVisible ? "is-visible" : ""
+          }`}
+        >
           {/* Baris Atas - Kanan ke Kiri */}
           <div className="w-full overflow-hidden relative">
             <div className="absolute left-0 top-0 bottom-0 w-32 bg-gradient-to-r from-gray-800 to-transparent z-10 pointer-events-none"></div>
