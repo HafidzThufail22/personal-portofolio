@@ -1,15 +1,15 @@
-import gsap from 'gsap';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 // Register ScrollTrigger plugin
 gsap.registerPlugin(ScrollTrigger);
 
 /**
  * GSAP Scroll Animation Utilities
- * 
+ *
  * File ini berisi berbagai utility functions untuk membuat animasi scroll
  * yang bisa digunakan kembali di berbagai component.
- * 
+ *
  * BIDIRECTIONAL SCROLL ANIMATIONS:
  * Semua animasi menggunakan toggleActions: "play reverse play reverse"
  * - Scroll ke bawah (enter viewport): animasi play (fade in, slide in, dll)
@@ -19,7 +19,7 @@ gsap.registerPlugin(ScrollTrigger);
 
 /**
  * Fade In Animation - Element muncul dengan opacity dari 0 ke 1
- * 
+ *
  * @param {string|Element} target - CSS selector atau DOM element
  * @param {Object} options - Opsi kustomisasi
  * @param {number} options.duration - Durasi animasi (default: 1)
@@ -43,12 +43,17 @@ export const fadeIn = (target, options = {}) => {
 
 /**
  * Slide In From Left - Element masuk dari kiri
- * 
+ *
  * @param {string|Element} target - CSS selector atau DOM element
  * @param {Object} options - Opsi kustomisasi
  */
 export const slideInLeft = (target, options = {}) => {
-  const { duration = 1, delay = 0, start = "top 80%", distance = 100 } = options;
+  const {
+    duration = 1,
+    delay = 0,
+    start = "top 80%",
+    distance = 100,
+  } = options;
 
   return gsap.from(target, {
     x: -distance, // Mulai dari -100px (kiri)
@@ -68,7 +73,12 @@ export const slideInLeft = (target, options = {}) => {
  * Slide In From Right - Element masuk dari kanan
  */
 export const slideInRight = (target, options = {}) => {
-  const { duration = 1, delay = 0, start = "top 80%", distance = 100 } = options;
+  const {
+    duration = 1,
+    delay = 0,
+    start = "top 80%",
+    distance = 100,
+  } = options;
 
   return gsap.from(target, {
     x: distance, // Mulai dari +100px (kanan)
@@ -88,7 +98,12 @@ export const slideInRight = (target, options = {}) => {
  * Slide In From Bottom - Element masuk dari bawah
  */
 export const slideInBottom = (target, options = {}) => {
-  const { duration = 1, delay = 0, start = "top 80%", distance = 100 } = options;
+  const {
+    duration = 1,
+    delay = 0,
+    start = "top 80%",
+    distance = 100,
+  } = options;
 
   return gsap.from(target, {
     y: distance, // Mulai dari +100px (bawah)
@@ -126,15 +141,21 @@ export const scaleIn = (target, options = {}) => {
 
 /**
  * Stagger Animation - Animasi berurutan untuk multiple elements
- * 
+ *
  * Contoh: Animasi cards yang muncul satu per satu
- * 
+ *
  * @param {string|Element} target - CSS selector atau DOM elements
  * @param {Object} options - Opsi kustomisasi
  * @param {number} options.stagger - Delay antar element (default: 0.2)
  */
 export const staggerFadeIn = (target, options = {}) => {
-  const { duration = 1, delay = 0, start = "top 80%", stagger = 0.2, direction = "bottom" } = options;
+  const {
+    duration = 1,
+    delay = 0,
+    start = "top 80%",
+    stagger = 0.2,
+    direction = "bottom",
+  } = options;
 
   const animationProps = {
     opacity: 0,
@@ -163,7 +184,7 @@ export const staggerFadeIn = (target, options = {}) => {
 
 /**
  * Parallax Effect - Element bergerak dengan kecepatan berbeda saat scroll
- * 
+ *
  * @param {string|Element} target - CSS selector atau DOM element
  * @param {Object} options - Opsi kustomisasi
  * @param {number} options.speed - Kecepatan parallax (default: 0.5)

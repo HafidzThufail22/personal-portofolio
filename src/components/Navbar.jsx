@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { HiCode } from "react-icons/hi";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -50,24 +51,10 @@ const Navbar = () => {
           <div className="flex items-center justify-between px-6 py-3">
             {/* Logo with icon */}
             <div className="flex items-center space-x-2">
-              <div className="w-8 h-8 bg-gradient-to-br from-blue-400 to-cyan-400 rounded-lg flex items-center justify-center">
-                <svg
-                  className="w-5 h-5 text-white"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M13 10V3L4 14h7v7l9-11h-7z"
-                  />
-                </svg>
-              </div>
-              <a href="#" className="text-xl font-bold text-white">
-                Portfolio
-              </a>
+              <HiCode className="w-8 h-8 text-white" />
+              {/* <a href="#" className="text-xl font-bold text-white">
+                hafidz
+              </a> */}
             </div>
 
             {/* Desktop Navigation */}
