@@ -1,18 +1,26 @@
-import { useState } from 'react';
+import { useState } from "react";
+import {
+  FaGithub,
+  FaLinkedin,
+  FaInstagram,
+  FaMapMarkerAlt,
+  FaEnvelope,
+  FaPhone,
+} from "react-icons/fa";
 
 const Contact = () => {
   const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    message: '',
+    name: "",
+    email: "",
+    message: "",
   });
 
   const handleSubmit = (e) => {
     e.preventDefault();
     // Handle form submission here
-    console.log('Form submitted:', formData);
-    alert('Thank you for your message! I will get back to you soon.');
-    setFormData({ name: '', email: '', message: '' });
+    console.log("Form submitted:", formData);
+    alert("Thank you for your message! I will get back to you soon.");
+    setFormData({ name: "", email: "", message: "" });
   };
 
   const handleChange = (e) => {
@@ -23,14 +31,28 @@ const Contact = () => {
   };
 
   const socialLinks = [
-    { name: 'GitHub', icon: '💻', url: 'https://github.com' },
-    { name: 'LinkedIn', icon: '💼', url: 'https://linkedin.com' },
-    { name: 'Twitter', icon: '🐦', url: 'https://twitter.com' },
-    { name: 'Email', icon: '📧', url: 'mailto:your.email@example.com' },
+    {
+      name: "GitHub",
+      icon: FaGithub,
+      url: "https://github.com/HafidzThufail22",
+    },
+    {
+      name: "LinkedIn",
+      icon: FaLinkedin,
+      url: "https://linkedin.com/in/hafidzthufail",
+    },
+    {
+      name: "Instagram",
+      icon: FaInstagram,
+      url: "https://instagram.com/hafidzthufail_",
+    },
   ];
 
   return (
-    <section id="contact" className="min-h-screen flex items-center py-20 bg-gray-800">
+    <section
+      id="contact"
+      className="min-h-screen flex items-center py-20 bg-gray-800"
+    >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
         <h2 className="text-4xl sm:text-5xl font-bold text-center mb-12">
           <span className="bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text text-transparent">
@@ -41,10 +63,15 @@ const Contact = () => {
         <div className="grid md:grid-cols-2 gap-12">
           {/* Contact Form */}
           <div className="bg-gray-900 p-8 rounded-xl">
-            <h3 className="text-2xl font-bold text-white mb-6">Send Me a Message</h3>
+            <h3 className="text-2xl font-bold text-white mb-6">
+              Send Me a Message
+            </h3>
             <form onSubmit={handleSubmit} className="space-y-6">
               <div>
-                <label htmlFor="name" className="block text-gray-300 mb-2 font-medium">
+                <label
+                  htmlFor="name"
+                  className="block text-gray-300 mb-2 font-medium"
+                >
                   Name
                 </label>
                 <input
@@ -60,7 +87,10 @@ const Contact = () => {
               </div>
 
               <div>
-                <label htmlFor="email" className="block text-gray-300 mb-2 font-medium">
+                <label
+                  htmlFor="email"
+                  className="block text-gray-300 mb-2 font-medium"
+                >
                   Email
                 </label>
                 <input
@@ -76,7 +106,10 @@ const Contact = () => {
               </div>
 
               <div>
-                <label htmlFor="message" className="block text-gray-300 mb-2 font-medium">
+                <label
+                  htmlFor="message"
+                  className="block text-gray-300 mb-2 font-medium"
+                >
                   Message
                 </label>
                 <textarea
@@ -86,7 +119,7 @@ const Contact = () => {
                   onChange={handleChange}
                   required
                   rows="5"
-                  className="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg text-white focus:outline-none focus:border-purple-500 transition-colors resize-none"
+                  className="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg text-white focus:outline-none  focus:border-blue-500 transition-colors resize-none"
                   placeholder="Your message here..."
                 ></textarea>
               </div>
@@ -103,49 +136,64 @@ const Contact = () => {
           {/* Contact Info & Social Links */}
           <div className="space-y-8">
             <div className="bg-gray-900 p-8 rounded-xl">
-              <h3 className="text-2xl font-bold text-white mb-6">Contact Information</h3>
+              <h3 className="text-2xl font-bold text-white mb-6">
+                Contact Information
+              </h3>
               <div className="space-y-4">
                 <div className="flex items-start">
-                  <span className="text-2xl mr-4">📍</span>
+                  <div className="w-12 h-12 bg-blue-500/20 rounded-lg flex items-center justify-center mr-4 flex-shrink-0">
+                    <FaMapMarkerAlt className="text-2xl text-blue-400" />
+                  </div>
                   <div>
                     <h4 className="text-white font-semibold mb-1">Location</h4>
-                    <p className="text-gray-400">Your City, Your Country</p>
+                    <p className="text-gray-400">Yogyakarta</p>
                   </div>
                 </div>
                 <div className="flex items-start">
-                  <span className="text-2xl mr-4">📧</span>
+                  <div className="w-12 h-12 bg-blue-500/20 rounded-lg flex items-center justify-center mr-4 flex-shrink-0">
+                    <FaEnvelope className="text-2xl text-blue-400" />
+                  </div>
                   <div>
                     <h4 className="text-white font-semibold mb-1">Email</h4>
-                    <p className="text-gray-400">your.email@example.com</p>
+                    <p className="text-gray-400">hafidzthufail22@gmail.com</p>
                   </div>
                 </div>
                 <div className="flex items-start">
-                  <span className="text-2xl mr-4">📱</span>
+                  <div className="w-12 h-12 bg-blue-500/20 rounded-lg flex items-center justify-center mr-4 flex-shrink-0">
+                    <FaPhone className="text-2xl text-blue-400" />
+                  </div>
                   <div>
                     <h4 className="text-white font-semibold mb-1">Phone</h4>
-                    <p className="text-gray-400">+1 (123) 456-7890</p>
+                    <p className="text-gray-400">+62 823 2834 6530</p>
                   </div>
                 </div>
               </div>
             </div>
 
             <div className="bg-gray-900 p-8 rounded-xl">
-              <h3 className="text-2xl font-bold text-white mb-6">Connect With Me</h3>
-              <div className="grid grid-cols-2 gap-4">
-                {socialLinks.map((social, idx) => (
-                  <a
-                    key={idx}
-                    href={social.url}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex items-center justify-center p-4 bg-gray-800 rounded-lg hover:bg-blue-600 transition-all duration-300 transform hover:scale-105 group"
-                  >
-                    <span className="text-3xl mr-3">{social.icon}</span>
-                    <span className="text-gray-300 group-hover:text-white font-medium">
-                      {social.name}
-                    </span>
-                  </a>
-                ))}
+              <h3 className="text-2xl font-bold text-white mb-6">
+                Connect With Me
+              </h3>
+              <div className="space-y-4">
+                {socialLinks.map((social, idx) => {
+                  const IconComponent = social.icon;
+                  return (
+                    <a
+                      key={idx}
+                      href={social.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex items-center p-4 bg-gray-800 rounded-lg hover:bg-gradient-to-r hover:from-blue-600 hover:to-cyan-500 transition-all duration-300 transform hover:scale-105 group"
+                    >
+                      <div className="w-12 h-12 bg-blue-500/20 rounded-lg flex items-center justify-center mr-4 group-hover:bg-white/20 transition-colors">
+                        <IconComponent className="text-2xl text-blue-400 group-hover:text-white transition-colors" />
+                      </div>
+                      <span className="text-gray-300 group-hover:text-white font-medium">
+                        {social.name}
+                      </span>
+                    </a>
+                  );
+                })}
               </div>
             </div>
           </div>
@@ -154,7 +202,7 @@ const Contact = () => {
         {/* Footer */}
         <div className="mt-16 pt-8 border-t border-gray-700 text-center">
           <p className="text-gray-400">
-            © {new Date().getFullYear()} Your Name. All rights reserved.
+            © {new Date().getFullYear()} hafidzthufail. All rights reserved.
           </p>
           <p className="text-gray-500 mt-2 text-sm">
             Built with React, Vite & Tailwind CSS

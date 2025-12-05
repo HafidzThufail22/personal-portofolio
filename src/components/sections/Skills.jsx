@@ -116,11 +116,6 @@ const Skills = () => {
             </div>
           </div>
         </div>
-
-        {/* Info text */}
-        <p className="text-center text-gray-400 mt-8 text-sm">
-          🎯 Hover to pause animation
-        </p>
       </div>
 
       {/* CSS Animation */}
