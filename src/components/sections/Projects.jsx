@@ -32,8 +32,8 @@ const Projects = () => {
         "Modern and responsive portfolio website showcasing my skills, projects, and experience with smooth animations and interactive UI.",
       tech: ["React.Js", "Tailwind CSS", "React Bits"],
       image: projectPersonalPorto,
-      link: "#",
-      github: "#",
+      link: "https://hafidzthufail-personalportofolio.vercel.app/", // Ganti dengan link live demo portfolio Anda
+      github: "https://github.com/HafidzThufail22/personal-portofolio", // Link repo GitHub portfolio (fixed typo)
     },
     {
       title: "Dashboard Toserba",
@@ -41,8 +41,8 @@ const Projects = () => {
         "Admin dashboard for retail with inventory management and automated reorder system.",
       tech: ["PHP", "Laravel", "MySQL", "Bootstrap"],
       image: projectDashboardToserba,
-      link: "#",
-      github: "#",
+      link: "https://your-dashboard-demo.com",
+      github: "https://github.com/HafidzThufail22/toserba-management",
     },
     {
       title: "Reservation System",
@@ -50,8 +50,8 @@ const Projects = () => {
         "Futsal court booking system with real-time availability and automated scheduling management.",
       tech: ["PHP", "MySQL", "Tailwind CSS"],
       image: projectReservationSystem,
-      link: "#",
-      github: "#",
+      link: "https://your-reservation-demo.com",
+      github: "https://github.com/HafidzThufail22/FutsalZone",
     },
     {
       title: "Article Website",
@@ -59,8 +59,8 @@ const Projects = () => {
         "City identity article website featuring local culture, history, and tourism information with clean and responsive design.",
       tech: ["HTML", "CSS"],
       image: projectArticleWebsite,
-      link: "#",
-      github: "#",
+      link: "https://kulon-progo.vercel.app/",
+      github: "https://github.com/HafidzThufail22/KulonProgo",
     },
     {
       title: "To-Do List App",
@@ -75,8 +75,8 @@ const Projects = () => {
         "MySQL",
       ],
       image: projectToDoList,
-      link: "#",
-      github: "#",
+      link: "https://your-todolist-demo.com",
+      github: "https://github.com/HafidzThufail22/to-do-list-App",
     },
     {
       title: "Course Website",
@@ -84,8 +84,8 @@ const Projects = () => {
         "Health tracking app with workout plans and progress visualization.",
       tech: ["HTML", "CSS", "JavaScript"],
       image: projectCourseWebsite,
-      link: "#",
-      github: "#",
+      link: "https://global-mandiri-official.vercel.app/",
+      github: "https://github.com/HafidzThufail22/GlobalMandiri-Official",
     },
   ];
 
@@ -219,31 +219,59 @@ const Projects = () => {
                   className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
                 />
 
-                {/* Overlay with Action Buttons on Hover (Only for Projects) */}
-                {activeTab === "projects" && (
-                  <div className="absolute inset-0 bg-gray-900/90 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center gap-4">
-                    <a
-                      href={item.github}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="w-12 h-12 bg-gray-800 border-2 border-blue-400 rounded-full flex items-center justify-center hover:bg-blue-400 hover:border-blue-300 transition-all transform hover:scale-110 group/code"
-                      aria-label="View Source Code"
-                    >
-                      <svg
-                        className="w-6 h-6 text-blue-400 group-hover/code:text-white transition-colors"
-                        fill="currentColor"
-                        viewBox="0 0 24 24"
-                        xmlns="http://www.w3.org/2000/svg"
+                {/* Overlay with Action Buttons on Hover */}
+                <div className="absolute inset-0 bg-gray-900/90 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center gap-4">
+                  {activeTab === "projects" ? (
+                    <>
+                      {/* GitHub Button for Projects */}
+                      <a
+                        href={item.github}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="w-12 h-12 bg-gray-800 border-2 border-blue-400 rounded-full flex items-center justify-center hover:bg-blue-400 hover:border-blue-300 transition-all transform hover:scale-110 group/code"
+                        aria-label="View Source Code"
                       >
-                        <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
-                      </svg>
-                    </a>
+                        <svg
+                          className="w-6 h-6 text-blue-400 group-hover/code:text-white transition-colors"
+                          fill="currentColor"
+                          viewBox="0 0 24 24"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
+                        </svg>
+                      </a>
+                      {/* Live Demo Button for Projects */}
+                      <a
+                        href={item.link}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="w-12 h-12 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-full flex items-center justify-center hover:from-blue-400 hover:to-cyan-400 transition-all transform hover:scale-110"
+                        aria-label="View Live Demo"
+                      >
+                        <svg
+                          className="w-6 h-6 text-white"
+                          fill="none"
+                          stroke="currentColor"
+                          strokeWidth="2"
+                          viewBox="0 0 24 24"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
+                          />
+                        </svg>
+                      </a>
+                    </>
+                  ) : (
+                    /* View Certificate Button for Certificates */
                     <a
-                      href={item.link}
+                      href={item.image}
                       target="_blank"
                       rel="noopener noreferrer"
                       className="w-12 h-12 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-full flex items-center justify-center hover:from-blue-400 hover:to-cyan-400 transition-all transform hover:scale-110"
-                      aria-label="View Live Demo"
+                      aria-label="View Full Certificate"
                     >
                       <svg
                         className="w-6 h-6 text-white"
@@ -260,8 +288,8 @@ const Projects = () => {
                         />
                       </svg>
                     </a>
-                  </div>
-                )}
+                  )}
+                </div>
               </div>
 
               {/* Item Content */}
@@ -286,24 +314,12 @@ const Projects = () => {
                     ))}
                   </div>
                 ) : (
-                  <div className="mb-4 space-y-1">
+                  <div className="space-y-1">
                     <p className="text-sm text-blue-400 font-medium">
                       {item.issuer}
                     </p>
                     <p className="text-xs text-gray-500">{item.date}</p>
                   </div>
-                )}
-
-                {/* Action Buttons - Only show for Certificates */}
-                {activeTab === "certificates" && (
-                  <a
-                    href={item.credentialUrl}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="block w-full px-4 py-2 bg-gradient-to-r from-blue-600 to-cyan-500 text-white rounded-lg hover:shadow-lg hover:shadow-blue-500/50 transition-all text-sm font-medium text-center"
-                  >
-                    View Credential
-                  </a>
                 )}
               </div>
             </div>

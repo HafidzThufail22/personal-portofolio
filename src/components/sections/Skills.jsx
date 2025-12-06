@@ -15,7 +15,7 @@ import {
   SiGit,
   SiCoreldraw,
 } from "react-icons/si";
-import { VscCode } from "react-icons/vsc";
+import { VscVscode } from "react-icons/vsc";
 
 const Skills = () => {
   const [headingRef, headingVisible] = useInView();
@@ -34,7 +34,7 @@ const Skills = () => {
     { name: "Figma", Icon: SiFigma, iconColor: "text-[#F24E1E]" },
     { name: "Canva", Icon: SiCanva, iconColor: "text-[#00C4CC]" },
     { name: "CorelDRAW", Icon: SiCoreldraw, iconColor: "text-[#00AA00]" },
-    { name: "VS Code", Icon: VscCode, iconColor: "text-[#007ACC]" },
+    { name: "VS Code", Icon: VscVscode, iconColor: "text-[#007ACC]" },
     { name: "GitHub", Icon: SiGithub, iconColor: "text-white" },
     { name: "Git", Icon: SiGit, iconColor: "text-[#F05032]" },
     { name: "Vercel", Icon: SiVercel, iconColor: "text-white" },
@@ -45,22 +45,8 @@ const Skills = () => {
   const bottomRow = techStack.slice(8);
 
   return (
-    <section
-      id="skills"
-      className="min-h-screen flex items-center justify-center py-20 bg-gray-800"
-    >
+    <section id="skills" className="py-12 bg-gray-900">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
-        <h2
-          ref={headingRef}
-          className={`text-4xl sm:text-5xl font-bold text-center mb-16 fade-in ${
-            headingVisible ? "is-visible" : ""
-          }`}
-        >
-          <span className="bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text text-transparent">
-            Skills & Technologies
-          </span>
-        </h2>
-
         {/* Scrolling Container - 2 Rows */}
         <div
           ref={scrollRef}
@@ -70,20 +56,20 @@ const Skills = () => {
         >
           {/* Baris Atas - Kanan ke Kiri */}
           <div className="w-full overflow-hidden relative">
-            <div className="absolute left-0 top-0 bottom-0 w-32 bg-gradient-to-r from-gray-800 to-transparent z-10 pointer-events-none"></div>
-            <div className="absolute right-0 top-0 bottom-0 w-32 bg-gradient-to-l from-gray-800 to-transparent z-10 pointer-events-none"></div>
+            <div className="absolute left-0 top-0 bottom-0 w-32 bg-gradient-to-r from-gray-900 to-transparent z-10 pointer-events-none"></div>
+            <div className="absolute right-0 top-0 bottom-0 w-32 bg-gradient-to-l from-gray-900 to-transparent z-10 pointer-events-none"></div>
 
             <div className="flex gap-6 animate-scroll-right-to-left hover:pause-scroll">
               {[1, 2, 3].map((set) =>
                 topRow.map((tech, index) => (
                   <div
                     key={`top-${set}-${index}`}
-                    className="flex-shrink-0 w-40 h-40 bg-gradient-to-br from-gray-900 to-gray-950 rounded-2xl border border-gray-700 hover:border-blue-500 flex flex-col items-center justify-center gap-4 p-6 shadow-xl hover:shadow-2xl hover:shadow-blue-500/20 transition-all duration-300 cursor-default group"
+                    className="flex-shrink-0 w-48 h-28 bg-gray-800 rounded-xl flex items-center gap-4 px-6 shadow-lg hover:shadow-xl hover:shadow-blue-500/20 transition-all duration-300 cursor-default group border border-transparent hover:border-blue-500"
                   >
                     <tech.Icon
-                      className={`text-6xl ${tech.iconColor} group-hover:scale-110 transition-transform duration-300`}
+                      className={`text-5xl ${tech.iconColor} group-hover:scale-110 transition-transform duration-300`}
                     />
-                    <span className="text-gray-300 text-sm font-medium text-center group-hover:text-white transition-colors">
+                    <span className="text-gray-300 text-base font-medium group-hover:text-white transition-colors">
                       {tech.name}
                     </span>
                   </div>
@@ -94,20 +80,20 @@ const Skills = () => {
 
           {/* Baris Bawah - Kiri ke Kanan */}
           <div className="w-full overflow-hidden relative">
-            <div className="absolute left-0 top-0 bottom-0 w-32 bg-gradient-to-r from-gray-800 to-transparent z-10 pointer-events-none"></div>
-            <div className="absolute right-0 top-0 bottom-0 w-32 bg-gradient-to-l from-gray-800 to-transparent z-10 pointer-events-none"></div>
+            <div className="absolute left-0 top-0 bottom-0 w-32 bg-gradient-to-r from-gray-900 to-transparent z-10 pointer-events-none"></div>
+            <div className="absolute right-0 top-0 bottom-0 w-32 bg-gradient-to-l from-gray-900 to-transparent z-10 pointer-events-none"></div>
 
             <div className="flex gap-6 animate-scroll-left-to-right hover:pause-scroll">
               {[1, 2, 3].map((set) =>
                 bottomRow.map((tech, index) => (
                   <div
                     key={`bottom-${set}-${index}`}
-                    className="flex-shrink-0 w-40 h-40 bg-gradient-to-br from-gray-900 to-gray-950 rounded-2xl border border-gray-700 hover:border-blue-500 flex flex-col items-center justify-center gap-4 p-6 shadow-xl hover:shadow-2xl hover:shadow-blue-500/20 transition-all duration-300 cursor-default group"
+                    className="flex-shrink-0 w-48 h-28 bg-gray-800 rounded-xl flex items-center gap-4 px-6 shadow-lg hover:shadow-xl hover:shadow-blue-500/20 transition-all duration-300 cursor-default group border border-transparent hover:border-blue-500"
                   >
                     <tech.Icon
-                      className={`text-6xl ${tech.iconColor} group-hover:scale-110 transition-transform duration-300`}
+                      className={`text-5xl ${tech.iconColor} group-hover:scale-110 transition-transform duration-300`}
                     />
-                    <span className="text-gray-300 text-sm font-medium text-center group-hover:text-white transition-colors">
+                    <span className="text-gray-300 text-base font-medium group-hover:text-white transition-colors">
                       {tech.name}
                     </span>
                   </div>

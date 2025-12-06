@@ -2,7 +2,6 @@ import profilePhoto from "../../assets/images/Profile.jpg";
 import { useInView } from "../../hooks/useInView";
 
 const About = () => {
-  // Intersection Observer hooks - lebih ringan
   const [headingRef, headingVisible] = useInView();
   const [imageRef, imageVisible] = useInView();
   const [contentRef, contentVisible] = useInView();
@@ -74,7 +73,7 @@ const About = () => {
               }`}
             >
               <div className="bg-gray-800 p-4 rounded-lg hover:bg-gray-750 transition-colors">
-                <h3 className="text-2xl font-bold text-blue-400 mb-2">3+</h3>
+                <h3 className="text-2xl font-bold text-blue-400 mb-2">2+</h3>
                 <p className="text-gray-400">Years Experience</p>
               </div>
               <div className="bg-gray-800 p-4 rounded-lg hover:bg-gray-750 transition-colors">
