@@ -8,6 +8,8 @@ import certWebDasar from "../../assets/images/certificate/Sertif_WebDasar_Dicodi
 import certSiber from "../../assets/images/certificate/Sertif_Seminar Siber Security.jpg";
 import certMaroonDay from "../../assets/images/certificate/Sertif_Sekretaris_MaroonDay2024.jpg";
 import certChiefOPPP from "../../assets/images/certificate/Chief OPPP Certificate.png";
+import certSecretaryOPPP from "../../assets/images/certificate/Secretary OPPP Certificate.png";
+import certAcaraLK1UKMIK from "../../assets/images/certificate/Sertif_Sie Acara_LK1 UKM IK.jpg";
 
 // Import Project Images
 import projectPersonalPorto from "../../assets/images/projects/personal porto project.png";
@@ -128,6 +130,15 @@ const Projects = () => {
       credentialUrl: "#",
     },
     {
+      title: "UKM IK Cadre Training Events Committee",
+      description:
+        "Certificate of appreciation as Secretary for Maroon Day 2024 event, demonstrating organizational and leadership skills.",
+      issuer: "Event Committee",
+      date: "2024",
+      image: certAcaraLK1UKMIK,
+      credentialUrl: "#",
+    },
+    {
       title: "Secretary of Maroon Day 2024",
       description:
         "Certificate of appreciation as Secretary for Maroon Day 2024 event, demonstrating organizational and leadership skills.",
@@ -143,6 +154,15 @@ const Projects = () => {
       issuer: "Organization",
       date: "2022",
       image: certChiefOPPP,
+      credentialUrl: "#",
+    },
+    {
+      title: "Secretary of the Organization of Pabelan Boarding School",
+      description:
+        "Leadership certificate as Chief of OPPP, showcasing project management and team coordination capabilities.",
+      issuer: "Organization",
+      date: "2022",
+      image: certSecretaryOPPP,
       credentialUrl: "#",
     },
   ];
