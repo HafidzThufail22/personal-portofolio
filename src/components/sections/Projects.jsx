@@ -132,7 +132,7 @@ const Projects = () => {
     {
       title: "UKM IK Cadre Training Events Committee",
       description:
-        "Certificate of appreciation as Secretary for Maroon Day 2024 event, demonstrating organizational and leadership skills.",
+        "Certificate of appreciation as Events Committee for UKM IK Cadre Training, demonstrating event coordination and organizational skills.",
       issuer: "Event Committee",
       date: "2024",
       image: certAcaraLK1UKMIK,
@@ -159,7 +159,7 @@ const Projects = () => {
     {
       title: "Secretary of the Organization of Pabelan Boarding School",
       description:
-        "Leadership certificate as Chief of OPPP, showcasing project management and team coordination capabilities.",
+        "Certificate as Secretary of OPPP, demonstrating administrative skills, documentation management, and organizational support.",
       issuer: "Organization",
       date: "2022",
       image: certSecretaryOPPP,
