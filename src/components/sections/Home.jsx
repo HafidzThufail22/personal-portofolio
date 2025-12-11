@@ -30,8 +30,8 @@ const Home = () => {
         />
       </div>
 
-      {/* Gradient Overlay */}
-      <div className="absolute inset-0 bg-gradient-to-br from-gray-900/90 via-blue-900/80 to-gray-900/90 z-10"></div>
+      {/* Subtle Gradient Overlay - lebih transparan agar partikel terlihat */}
+      <div className="absolute inset-0 bg-gradient-to-br from-transparent via-blue-900/20 to-transparent z-10"></div>
 
       {/* Content */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-20 py-8 sm:py-0">

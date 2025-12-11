@@ -49,10 +49,7 @@ const Contact = () => {
   ];
 
   return (
-    <section
-      id="contact"
-      className="min-h-screen flex items-center py-20 bg-gray-900"
-    >
+    <section id="contact" className="min-h-screen flex items-center py-20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
         <h2 className="text-4xl sm:text-5xl font-bold text-center mb-12">
           <span className="bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text text-transparent">
