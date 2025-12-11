@@ -46,7 +46,7 @@ const Navbar = () => {
     <nav className="fixed top-0 left-0 right-0 z-50 px-4 pt-4">
       <div className="max-w-6xl mx-auto">
         {/* Main navbar container with rounded design */}
-        <div className="bg-gradient-to-r from-indigo-950 via-blue-950 to-indigo-950 backdrop-blur-md rounded-full border border-blue-800/30 shadow-2xl shadow-blue-900/50">
+        <div className="backdrop-blur-sm bg-gray-900/50 rounded-full border border-blue-500/30 shadow-lg">
           <div className="flex items-center justify-between px-6 py-3">
             {/* Logo with icon */}
             <div className="flex items-center space-x-2">
@@ -66,8 +66,8 @@ const Navbar = () => {
                     href={link.href}
                     className={`px-5 py-2 rounded-full text-sm font-medium transition-all duration-300 ${
                       isActive
-                        ? "bg-gradient-to-r from-blue-600 to-cyan-400 text-white shadow-lg shadow-blue-500/50"
-                        : "text-gray-300 hover:text-white hover:bg-white/10"
+                        ? "border border-blue-500 text-blue-400 bg-blue-500/10"
+                        : "text-gray-300 hover:text-blue-400 hover:border hover:border-blue-500/50 border border-transparent"
                     }`}
                   >
                     {link.name}
@@ -80,7 +80,7 @@ const Navbar = () => {
             <div className="md:hidden">
               <button
                 onClick={() => setIsOpen(!isOpen)}
-                className="inline-flex items-center justify-center p-2 rounded-full text-gray-300 hover:text-white hover:bg-white/10 focus:outline-none transition-all duration-300"
+                className="inline-flex items-center justify-center p-2 rounded-full text-gray-300 hover:text-blue-400 hover:border hover:border-blue-500/50 border border-transparent focus:outline-none transition-all duration-300"
               >
                 <svg
                   className="h-6 w-6"
@@ -112,7 +112,7 @@ const Navbar = () => {
         {/* Mobile menu */}
         {isOpen && (
           <div className="md:hidden mt-2">
-            <div className="bg-gradient-to-r from-indigo-950 via-blue-950 to-indigo-950 backdrop-blur-md rounded-3xl border border-blue-800/30 shadow-2xl shadow-blue-900/50 px-4 py-3 space-y-1">
+            <div className="backdrop-blur-sm bg-gray-900/50 rounded-3xl border border-blue-500/30 shadow-lg px-4 py-3 space-y-1">
               {navLinks.map((link) => {
                 const isActive = activeSection === link.href.substring(1);
                 return (
@@ -121,8 +121,8 @@ const Navbar = () => {
                     href={link.href}
                     className={`block px-4 py-2 rounded-full text-base font-medium transition-all duration-300 ${
                       isActive
-                        ? "bg-gradient-to-r from-blue-600 to-cyan-400 text-white shadow-lg shadow-blue-500/50"
-                        : "text-gray-300 hover:text-white hover:bg-white/10"
+                        ? "border border-blue-500 text-blue-400 bg-blue-500/10"
+                        : "text-gray-300 hover:text-blue-400 hover:border hover:border-blue-500/50 border border-transparent"
                     }`}
                     onClick={() => setIsOpen(false)}
                   >
