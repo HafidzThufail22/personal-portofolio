@@ -72,6 +72,53 @@ const Squares = ({
       ctx.fillRect(0, 0, canvas.width, canvas.height);
     };
 
+    // Jika speed = 0, hanya render static grid tanpa animasi
+    if (speed === 0) {
+      drawGrid();
+
+      const handleMouseMove = (event) => {
+        const rect = canvas.getBoundingClientRect();
+        const mouseX = event.clientX - rect.left;
+        const mouseY = event.clientY - rect.top;
+
+        const startX =
+          Math.floor(gridOffset.current.x / squareSize) * squareSize;
+        const startY =
+          Math.floor(gridOffset.current.y / squareSize) * squareSize;
+
+        const hoveredSquareX = Math.floor(
+          (mouseX + gridOffset.current.x - startX) / squareSize
+        );
+        const hoveredSquareY = Math.floor(
+          (mouseY + gridOffset.current.y - startY) / squareSize
+        );
+
+        if (
+          !hoveredSquareRef.current ||
+          hoveredSquareRef.current.x !== hoveredSquareX ||
+          hoveredSquareRef.current.y !== hoveredSquareY
+        ) {
+          hoveredSquareRef.current = { x: hoveredSquareX, y: hoveredSquareY };
+          drawGrid();
+        }
+      };
+
+      const handleMouseLeave = () => {
+        hoveredSquareRef.current = null;
+        drawGrid();
+      };
+
+      canvas.addEventListener("mousemove", handleMouseMove);
+      canvas.addEventListener("mouseleave", handleMouseLeave);
+
+      return () => {
+        window.removeEventListener("resize", resizeCanvas);
+        canvas.removeEventListener("mousemove", handleMouseMove);
+        canvas.removeEventListener("mouseleave", handleMouseLeave);
+      };
+    }
+
+    // Animasi untuk speed > 0
     const updateAnimation = () => {
       const effectiveSpeed = Math.max(speed, 0.1);
       switch (direction) {

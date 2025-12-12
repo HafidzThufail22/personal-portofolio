@@ -192,23 +192,23 @@ const Projects = () => {
             tabsVisible ? "is-visible" : ""
           }`}
         >
-          <div className="inline-flex bg-gray-800 p-1 rounded-lg shadow-lg">
+          <div className="inline-flex backdrop-blur-sm bg-gray-900/20 p-1 rounded-full border border-blue-500/20">
             <button
               onClick={() => setActiveTab("projects")}
-              className={`px-8 py-3 rounded-lg font-semibold transition-all duration-300 ${
+              className={`px-8 py-3 rounded-full font-semibold transition-all duration-300 ${
                 activeTab === "projects"
-                  ? "bg-gradient-to-r from-blue-600 to-cyan-500 text-white shadow-lg shadow-blue-500/50"
-                  : "text-gray-400 hover:text-white hover:bg-gray-700"
+                  ? "border border-blue-500 text-blue-400 bg-blue-500/10"
+                  : "text-gray-300 hover:text-blue-400 hover:border hover:border-blue-500/50 border border-transparent"
               }`}
             >
               Projects
             </button>
             <button
               onClick={() => setActiveTab("certificates")}
-              className={`px-8 py-3 rounded-lg font-semibold transition-all duration-300 ${
+              className={`px-8 py-3 rounded-full font-semibold transition-all duration-300 ${
                 activeTab === "certificates"
-                  ? "bg-gradient-to-r from-blue-600 to-cyan-500 text-white shadow-lg shadow-blue-500/50"
-                  : "text-gray-400 hover:text-white hover:bg-gray-700"
+                  ? "border border-blue-500 text-blue-400 bg-blue-500/10"
+                  : "text-gray-300 hover:text-blue-400 hover:border hover:border-blue-500/50 border border-transparent"
               }`}
             >
               Certificates
@@ -226,10 +226,10 @@ const Projects = () => {
           {displayItems.map((item, idx) => (
             <div
               key={idx}
-              className="bg-gray-800 rounded-xl overflow-hidden hover:shadow-2xl hover:shadow-blue-500/30 transition-all duration-300 transform hover:-translate-y-2 group relative"
+              className="backdrop-blur-sm bg-gray-900/20 border border-blue-500/20 rounded-xl overflow-hidden hover:shadow-2xl hover:shadow-blue-500/30 hover:border-blue-500/50 transition-all duration-300 transform hover:-translate-y-2 group relative"
             >
               {/* Item Image/Icon */}
-              <div className="h-48 bg-gradient-to-br from-blue-600 to-cyan-400 flex items-center justify-center overflow-hidden relative">
+              <div className="h-48 bg-gradient-to-br from-blue-600/20 to-cyan-400/20 flex items-center justify-center overflow-hidden relative">
                 <img
                   src={item.image}
                   alt={item.title}

@@ -1,7 +1,9 @@
 import profilePhoto from "../../assets/images/Profile.jpg";
+import profileTransparant from "../../assets/images/Profile_Transparant.png";
 import { useInView } from "../../hooks/useInView";
 import Squares from "../Squares";
 import LogoLoop from "../LogoLoop";
+import ProfileCard from "../ProfileCard";
 import {
   SiHtml5,
   SiCss3,
@@ -113,7 +115,7 @@ const About = () => {
 
       {/* Container dengan border box */}
       <div className="max-w-7xl mx-auto w-full relative z-10">
-        <div className="border border-blue-500/30 rounded-3xl p-8 md:p-12 lg:p-16 backdrop-blur-sm bg-gray-900/50">
+        <div className="border border-blue-500/30 rounded-3xl p-8 md:p-12 lg:p-16 backdrop-blur-sm bg-gray-900/10">
           <h2
             ref={headingRef}
             className={`text-4xl sm:text-5xl font-bold text-center mb-12 fade-in ${
@@ -124,24 +126,32 @@ const About = () => {
               About Me
             </span>
           </h2>
-
           <div className="grid md:grid-cols-2 gap-12 items-center mb-16">
-            {/* Image/Avatar */}
+            {/* Profile Card */}
             <div
               ref={imageRef}
               className={`flex justify-center slide-left ${
                 imageVisible ? "is-visible" : ""
               }`}
             >
-              <div className="w-64 h-64 sm:w-80 sm:h-80 rounded-full bg-gradient-to-br from-blue-500 to-cyan-400 p-1">
-                <div className="w-full h-full rounded-full overflow-hidden bg-gray-800">
-                  <img
-                    src={profilePhoto}
-                    alt="Hafidz Thufail Nur Ikhsan"
-                    className="w-full h-full object-cover"
-                  />
-                </div>
-              </div>
+              <ProfileCard
+                name="Hafidz Thufail Nur Ikhsan"
+                title="Informatics Student"
+                handle="hafidzthufail_"
+                status="Available for work"
+                contactText="Contact Me"
+                avatarUrl={profileTransparant}
+                miniAvatarUrl={profilePhoto}
+                showUserInfo={true}
+                enableTilt={false}
+                enableMobileTilt={false}
+                onContactClick={() => {
+                  const contactSection = document.getElementById("contact");
+                  if (contactSection) {
+                    contactSection.scrollIntoView({ behavior: "smooth" });
+                  }
+                }}
+              />
             </div>
 
             {/* Content */}
@@ -187,7 +197,6 @@ const About = () => {
               </div>
             </div>
           </div>
-
           {/* Skills Section - Using LogoLoop */}
           <div
             ref={skillsRef}
