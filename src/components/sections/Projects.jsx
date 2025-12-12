@@ -245,11 +245,11 @@ const Projects = () => {
                         href={item.github}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="w-12 h-12 bg-gray-800 border-2 border-blue-400 rounded-full flex items-center justify-center hover:bg-blue-400 hover:border-blue-300 transition-all transform hover:scale-110 group/code"
+                        className="w-12 h-12 backdrop-blur-sm bg-gray-900/20 border border-blue-500 rounded-full flex items-center justify-center hover:bg-blue-500/20 hover:border-blue-400 transition-all transform hover:scale-110 group/code"
                         aria-label="View Source Code"
                       >
                         <svg
-                          className="w-6 h-6 text-blue-400 group-hover/code:text-white transition-colors"
+                          className="w-6 h-6 text-blue-400 group-hover/code:text-blue-300 transition-colors"
                           fill="currentColor"
                           viewBox="0 0 24 24"
                           xmlns="http://www.w3.org/2000/svg"
@@ -262,11 +262,11 @@ const Projects = () => {
                         href={item.link}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="w-12 h-12 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-full flex items-center justify-center hover:from-blue-400 hover:to-cyan-400 transition-all transform hover:scale-110"
+                        className="w-12 h-12 backdrop-blur-sm bg-blue-500/10 border border-blue-500 rounded-full flex items-center justify-center hover:bg-blue-500/20 hover:border-blue-400 transition-all transform hover:scale-110"
                         aria-label="View Live Demo"
                       >
                         <svg
-                          className="w-6 h-6 text-white"
+                          className="w-6 h-6 text-blue-400"
                           fill="none"
                           stroke="currentColor"
                           strokeWidth="2"
@@ -287,11 +287,11 @@ const Projects = () => {
                       href={item.image}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="w-12 h-12 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-full flex items-center justify-center hover:from-blue-400 hover:to-cyan-400 transition-all transform hover:scale-110"
+                      className="w-12 h-12 backdrop-blur-sm bg-blue-500/10 border border-blue-500 rounded-full flex items-center justify-center hover:bg-blue-500/20 hover:border-blue-400 transition-all transform hover:scale-110"
                       aria-label="View Full Certificate"
                     >
                       <svg
-                        className="w-6 h-6 text-white"
+                        className="w-6 h-6 text-blue-400"
                         fill="none"
                         stroke="currentColor"
                         strokeWidth="2"
