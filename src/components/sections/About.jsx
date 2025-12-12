@@ -137,7 +137,7 @@ const About = () => {
               <ProfileCard
                 name="Hafidz Thufail Nur Ikhsan"
                 title="Informatics Student"
-                handle="hafidzthufailll"
+                handle="hafidzthufail_"
                 status="Available for work"
                 contactText="Contact Me"
                 avatarUrl={profileTransparant}
