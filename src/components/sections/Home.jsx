@@ -100,11 +100,11 @@ const Home = () => {
             href="https://github.com/HafidzThufail22"
             target="_blank"
             rel="noopener noreferrer"
-            className="text-blue-400 hover:text-blue-300 transform hover:scale-110 transition-all duration-300"
+            className="w-12 h-12 backdrop-blur-sm bg-gray-900/20 border border-blue-500/50 rounded-lg flex items-center justify-center text-blue-400 hover:text-blue-300 hover:border-blue-500 hover:bg-blue-500/10 transform hover:scale-110 transition-all duration-300"
             aria-label="GitHub"
           >
             <svg
-              className="w-8 h-8"
+              className="w-6 h-6"
               fill="currentColor"
               viewBox="0 0 24 24"
               xmlns="http://www.w3.org/2000/svg"
@@ -116,11 +116,11 @@ const Home = () => {
             href="https://linkedin.com/in/hafidzthufail"
             target="_blank"
             rel="noopener noreferrer"
-            className="text-blue-400 hover:text-blue-300 transform hover:scale-110 transition-all duration-300"
+            className="w-12 h-12 backdrop-blur-sm bg-gray-900/20 border border-blue-500/50 rounded-lg flex items-center justify-center text-blue-400 hover:text-blue-300 hover:border-blue-500 hover:bg-blue-500/10 transform hover:scale-110 transition-all duration-300"
             aria-label="LinkedIn"
           >
             <svg
-              className="w-8 h-8"
+              className="w-6 h-6"
               fill="currentColor"
               viewBox="0 0 24 24"
               xmlns="http://www.w3.org/2000/svg"
@@ -132,11 +132,11 @@ const Home = () => {
             href="https://instagram.com/hafidzthufail_"
             target="_blank"
             rel="noopener noreferrer"
-            className="text-blue-400 hover:text-blue-300 transform hover:scale-110 transition-all duration-300"
+            className="w-12 h-12 backdrop-blur-sm bg-gray-900/20 border border-blue-500/50 rounded-lg flex items-center justify-center text-blue-400 hover:text-blue-300 hover:border-blue-500 hover:bg-blue-500/10 transform hover:scale-110 transition-all duration-300"
             aria-label="Instagram"
           >
             <svg
-              className="w-8 h-8"
+              className="w-6 h-6"
               fill="currentColor"
               viewBox="0 0 24 24"
               xmlns="http://www.w3.org/2000/svg"
@@ -146,11 +146,11 @@ const Home = () => {
           </a>
           <a
             href="mailto:hafidzthufail22@gmail.com"
-            className="text-blue-400 hover:text-blue-300 transform hover:scale-110 transition-all duration-300"
+            className="w-12 h-12 backdrop-blur-sm bg-gray-900/20 border border-blue-500/50 rounded-lg flex items-center justify-center text-blue-400 hover:text-blue-300 hover:border-blue-500 hover:bg-blue-500/10 transform hover:scale-110 transition-all duration-300"
             aria-label="Email"
           >
             <svg
-              className="w-8 h-8"
+              className="w-6 h-6"
               fill="currentColor"
               viewBox="0 0 24 24"
               xmlns="http://www.w3.org/2000/svg"
