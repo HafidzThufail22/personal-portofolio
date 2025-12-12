@@ -162,20 +162,16 @@ const About = () => {
               }`}
             >
               <p className="text-lg text-gray-300 leading-relaxed">
-                I’m a UI/UX designer and front-end enthusiast who enjoys shaping
-                digital experiences that feel clear, intuitive, and visually
-                balanced. As a student, I’m passionate about understanding how
-                people interact with interfaces and how thoughtful design
-                decisions can guide them smoothly through a product, creating
-                experiences that are meaningful and enjoyable.
+                I am an Informatics student at the Digital Technology University
+                of Indonesia with a strong interest in design and technology
+                development. I focus on UI/UX Design and continue learning how
+                to create simple, intuitive, and meaningful user experiences.
               </p>
               <p className="text-lg text-gray-300 leading-relaxed">
-                Beyond my academic activities, I continuously strive to develop
-                my skills in front-end development. Alongside my daily
-                responsibilities, I also make time to deepen my understanding of
-                UI/UX design. Learning new things in this field helps me
-                maintain my creative flow and elevate the quality of the work I
-                create.
+                I am also interested in Front-End Development, especially in
+                turning designs into responsive and user-friendly interfaces. By
+                combining design and coding skills, I aim to keep growing and
+                contribute to creating high-quality digital products.
               </p>
 
               <div

@@ -181,7 +181,7 @@ const Projects = () => {
           }`}
         >
           <span className="bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text text-transparent">
-            My Projects & Certificates
+            Portofolio Snowcase
           </span>
         </h2>
 
