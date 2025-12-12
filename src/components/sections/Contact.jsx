@@ -59,7 +59,7 @@ const Contact = () => {
 
         <div className="grid md:grid-cols-2 gap-12">
           {/* Contact Form */}
-          <div className="bg-gray-900 p-8 rounded-xl">
+          <div className="backdrop-blur-sm bg-gray-900/20 border border-blue-500/20 p-8 rounded-xl">
             <h3 className="text-2xl font-bold text-white mb-6">
               Send Me a Message
             </h3>
@@ -78,7 +78,7 @@ const Contact = () => {
                   value={formData.name}
                   onChange={handleChange}
                   required
-                  className="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg text-white focus:outline-none focus:border-blue-500 transition-colors"
+                  className="w-full px-4 py-3 backdrop-blur-sm bg-gray-900/20 border border-blue-500/30 rounded-lg text-white placeholder:text-gray-500 focus:outline-none focus:border-blue-500 focus:bg-gray-900/30 transition-all"
                   placeholder="Your name"
                 />
               </div>
@@ -97,7 +97,7 @@ const Contact = () => {
                   value={formData.email}
                   onChange={handleChange}
                   required
-                  className="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg text-white focus:outline-none focus:border-blue-500 transition-colors"
+                  className="w-full px-4 py-3 backdrop-blur-sm bg-gray-900/20 border border-blue-500/30 rounded-lg text-white placeholder:text-gray-500 focus:outline-none focus:border-blue-500 focus:bg-gray-900/30 transition-all"
                   placeholder="your.email@example.com"
                 />
               </div>
@@ -116,14 +116,14 @@ const Contact = () => {
                   onChange={handleChange}
                   required
                   rows="5"
-                  className="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg text-white focus:outline-none  focus:border-blue-500 transition-colors resize-none"
+                  className="w-full px-4 py-3 backdrop-blur-sm bg-gray-900/20 border border-blue-500/30 rounded-lg text-white placeholder:text-gray-500 focus:outline-none focus:border-blue-500 focus:bg-gray-900/30 transition-all resize-none"
                   placeholder="Your message here..."
                 ></textarea>
               </div>
 
               <button
                 type="submit"
-                className="w-full px-6 py-3 bg-gradient-to-r from-blue-600 to-blue-400 text-white rounded-lg font-semibold hover:shadow-lg hover:shadow-blue-500/50 transform hover:scale-105 transition-all duration-300"
+                className="w-full px-6 py-3 backdrop-blur-sm bg-blue-500/10 border border-blue-500 text-blue-400 rounded-lg font-semibold hover:bg-blue-500/20 hover:border-blue-400 transform hover:scale-105 transition-all duration-300"
               >
                 Send Message
               </button>
@@ -132,7 +132,7 @@ const Contact = () => {
 
           {/* Contact Info & Social Links */}
           <div className="space-y-8">
-            <div className="bg-gray-900 p-8 rounded-xl">
+            <div className="backdrop-blur-sm bg-gray-900/20 border border-blue-500/20 p-8 rounded-xl">
               <h3 className="text-2xl font-bold text-white mb-6">
                 Contact Information
               </h3>
@@ -167,7 +167,7 @@ const Contact = () => {
               </div>
             </div>
 
-            <div className="bg-gray-900 p-8 rounded-xl">
+            <div className="backdrop-blur-sm bg-gray-900/20 border border-blue-500/20 p-8 rounded-xl">
               <h3 className="text-2xl font-bold text-white mb-6">
                 Connect With Me
               </h3>
@@ -180,7 +180,7 @@ const Contact = () => {
                       href={social.url}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="flex items-center p-4 bg-gray-800 rounded-lg hover:bg-gradient-to-r hover:from-blue-600 hover:to-cyan-500 transition-all duration-300 transform hover:scale-105 group"
+                      className="flex items-center p-4 backdrop-blur-sm bg-gray-900/20 border border-blue-500/30 rounded-lg hover:bg-blue-500/20 hover:border-blue-500 transition-all duration-300 transform hover:scale-105 group"
                     >
                       <div className="w-12 h-12 bg-blue-500/20 rounded-lg flex items-center justify-center mr-4 group-hover:bg-white/20 transition-colors">
                         <IconComponent className="text-2xl text-blue-400 group-hover:text-white transition-colors" />
@@ -197,9 +197,9 @@ const Contact = () => {
         </div>
 
         {/* Footer */}
-        <div className="mt-16 pt-8 border-t border-gray-700 text-center">
+        <div className="mt-16 pt-8 border-t border-blue-500/20 text-center">
           <p className="text-gray-400">
-            © {new Date().getFullYear()} hafidzthufail. All rights reserved.
+            © {new Date().getFullYear()} hafidzthufail.
           </p>
           <p className="text-gray-500 mt-2 text-sm">
             Built with React, Vite & Tailwind CSS
