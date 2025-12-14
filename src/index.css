@@ -200,3 +200,61 @@ h6 {
     opacity: 1;
   }
 }
+
+/* Loading Screen Custom Animations */
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0) translateX(0);
+    opacity: 0.3;
+  }
+  25% {
+    transform: translateY(-20px) translateX(10px);
+    opacity: 0.6;
+  }
+  50% {
+    transform: translateY(-40px) translateX(-10px);
+    opacity: 0.3;
+  }
+  75% {
+    transform: translateY(-20px) translateX(5px);
+    opacity: 0.6;
+  }
+}
+
+.animate-float {
+  animation: float 8s ease-in-out infinite;
+}
+
+.animation-delay-200 {
+  animation-delay: 0.2s;
+}
+
+.animation-delay-400 {
+  animation-delay: 0.4s;
+}
+
+/* Radial gradient background */
+.bg-radial-gradient {
+  background: radial-gradient(
+    circle at 50% 50%,
+    rgba(59, 130, 246, 0.2) 0%,
+    transparent 50%
+  );
+}
+
+/* Main page enter animation - Simple blur effect */
+@keyframes blurIn {
+  0% {
+    opacity: 0;
+    filter: blur(20px);
+  }
+  100% {
+    opacity: 1;
+    filter: blur(0px);
+  }
+}
+
+.animate-blur-in {
+  animation: blurIn 1.2s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
