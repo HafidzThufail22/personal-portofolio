@@ -1,20 +1,23 @@
 import { useEffect, useState } from "react";
-import { Code2, User, Github, ArrowRight } from "lucide-react";
+import { Code2, User, Github } from "lucide-react";
 
 const LoadingScreen = ({ onComplete }) => {
   const [progress, setProgress] = useState(0);
-  const [isComplete, setIsComplete] = useState(false);
   const [isExiting, setIsExiting] = useState(false);
 
   useEffect(() => {
-    // Simulate loading progress - lebih lama
+    // Simulate loading progress
     const interval = setInterval(() => {
       setProgress((prev) => {
         if (prev >= 100) {
           clearInterval(interval);
-          // Tampilkan button setelah loading selesai
+          // Langsung mulai exit animation setelah loading selesai
           setTimeout(() => {
-            setIsComplete(true);
+            setIsExiting(true);
+            // Panggil onComplete setelah animation selesai
+            setTimeout(() => {
+              onComplete();
+            }, 800);
           }, 500);
           return 100;
         }
@@ -24,19 +27,12 @@ const LoadingScreen = ({ onComplete }) => {
     }, 150);
 
     return () => clearInterval(interval);
-  }, []);
-
-  const handleEnter = () => {
-    setIsExiting(true);
-    setTimeout(() => {
-      onComplete();
-    }, 200);
-  };
+  }, [onComplete]);
 
   return (
     <div
-      className={`fixed inset-0 z-50 flex flex-col items-center justify-center bg-gray-900 transition-all duration-800 ${
-        isExiting ? "opacity-0 blur-xl" : "opacity-100 blur-0"
+      className={`fixed inset-0 z-50 flex flex-col items-center justify-center bg-gray-900 transition-all duration-1000 ease-in-out ${
+        isExiting ? "-translate-y-full" : "translate-y-0"
       }`}
     >
       {/* Animated background gradient - sama dengan Home */}
@@ -47,8 +43,10 @@ const LoadingScreen = ({ onComplete }) => {
 
       {/* Main content container with 3D effect */}
       <div
-        className={`relative z-10 transition-all duration-1000 ${
-          isExiting ? "opacity-0" : "opacity-100"
+        className={`relative z-10 transition-all duration-700 ${
+          isExiting
+            ? "opacity-0 translate-y-20 scale-95"
+            : "opacity-100 translate-y-0 scale-100"
         }`}
       >
         {/* Icons dengan efek glow */}
@@ -83,14 +81,10 @@ const LoadingScreen = ({ onComplete }) => {
           </div>
         </div>
 
-        {/* Loading area dengan height tetap untuk button */}
-        <div className="min-h-[200px] flex flex-col items-center justify-center">
+        {/* Loading area */}
+        <div className="flex flex-col items-center justify-center">
           {/* Loading spinner */}
-          <div
-            className={`relative z-10 mb-8 flex justify-center transition-all duration-500 ${
-              isComplete ? "opacity-0 scale-90 h-0" : "opacity-100 scale-100"
-            }`}
-          >
+          <div className="relative z-10 mb-8 flex justify-center">
             <div className="w-20 h-20 border-4 border-gray-700 border-t-blue-500 rounded-full animate-spin"></div>
             <div
               className="absolute inset-0 w-20 h-20 border-4 border-transparent border-r-cyan-400 rounded-full animate-spin mx-auto"
@@ -99,20 +93,12 @@ const LoadingScreen = ({ onComplete }) => {
           </div>
 
           {/* Loading text */}
-          <h3
-            className={`text-xl font-heading font-bold mb-4 text-center bg-gradient-to-r from-blue-300 via-blue-500 to-cyan-400 bg-clip-text text-transparent transition-all duration-500 ${
-              isComplete ? "opacity-0 scale-90 h-0" : "opacity-100 scale-100"
-            }`}
-          >
+          <h3 className="text-xl font-heading font-bold mb-4 text-center bg-gradient-to-r from-blue-300 via-blue-500 to-cyan-400 bg-clip-text text-transparent">
             Loading Portfolio
           </h3>
 
           {/* Progress bar */}
-          <div
-            className={`w-64 h-2 bg-gray-800 rounded-full overflow-hidden mx-auto transition-all duration-500 ${
-              isComplete ? "opacity-0 scale-90 h-0" : "opacity-100 scale-100"
-            }`}
-          >
+          <div className="w-64 h-2 bg-gray-800 rounded-full overflow-hidden mx-auto">
             <div
               className="h-full bg-gradient-to-r from-blue-500 to-cyan-400 rounded-full transition-all duration-300 ease-out shadow-lg shadow-blue-500/50"
               style={{ width: `${Math.min(progress, 100)}%` }}
@@ -120,29 +106,9 @@ const LoadingScreen = ({ onComplete }) => {
           </div>
 
           {/* Progress percentage */}
-          <p
-            className={`mt-4 text-gray-400 font-mono text-sm text-center transition-all duration-500 ${
-              isComplete ? "opacity-0 scale-90 h-0" : "opacity-100 scale-100"
-            }`}
-          >
+          <p className="mt-4 text-gray-400 font-mono text-sm text-center">
             {Math.floor(Math.min(progress, 100))}%
           </p>
-
-          {/* Enter Button - Tampil di posisi yang sama dengan loading */}
-          {isComplete && (
-            <div className="flex flex-col items-center gap-4 animate-fade-in">
-              <button
-                onClick={handleEnter}
-                className="group px-8 py-3 backdrop-blur-sm bg-blue-500/10 border border-blue-500 text-blue-400 rounded-lg font-semibold hover:bg-blue-500/20 hover:border-blue-400 transform hover:scale-105 transition-all duration-300 flex items-center gap-2"
-              >
-                Enter Portfolio
-                <ArrowRight className="w-5 h-5 transition-transform duration-300 group-hover:translate-x-1" />
-              </button>
-              <p className="text-gray-400 text-sm animate-pulse">
-                Click to explore my work
-              </p>
-            </div>
-          )}
         </div>
       </div>
 

@@ -23,17 +23,19 @@ function App() {
   }
 
   return (
-    <div
-      className={`min-h-screen ${
-        showContent ? "animate-blur-in" : "opacity-0"
-      }`}
-    >
+    <>
       <Navbar />
-      <Home />
-      <About />
-      <Projects />
-      <Contact />
-    </div>
+      <div
+        className={`min-h-screen ${
+          showContent ? "animate-blur-in" : "opacity-0"
+        }`}
+      >
+        <Home />
+        <About />
+        <Projects />
+        <Contact />
+      </div>
+    </>
   );
 }
 

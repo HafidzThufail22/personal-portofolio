@@ -4,6 +4,7 @@ import { HiCode } from "react-icons/hi";
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [activeSection, setActiveSection] = useState("home");
+  const [scrolled, setScrolled] = useState(false);
 
   const navLinks = [
     { name: "Home", href: "#home" },
@@ -11,6 +12,16 @@ const Navbar = () => {
     { name: "Portofolio", href: "#projects" },
     { name: "Contact", href: "#contact" },
   ];
+
+  // Track scroll position for navbar styling
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 20);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   // Track active section based on scroll position
   useEffect(() => {
@@ -43,10 +54,16 @@ const Navbar = () => {
   }, []);
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 px-4 pt-4">
+    <nav className="fixed top-0 left-0 right-0 z-[100] px-4 pt-4 transition-all duration-300">
       <div className="max-w-6xl mx-auto">
         {/* Main navbar container with rounded design */}
-        <div className="backdrop-blur-sm bg-gray-900/50 rounded-full border border-blue-500/30 shadow-lg">
+        <div
+          className={`backdrop-blur-md rounded-full border shadow-lg transition-all duration-300 ${
+            scrolled
+              ? "bg-gray-900/95 border-blue-500/50 shadow-2xl shadow-blue-500/20"
+              : "bg-gray-900/70 border-blue-500/30"
+          }`}
+        >
           <div className="flex items-center justify-between px-6 py-3">
             {/* Logo with icon */}
             <div className="flex items-center space-x-2">
@@ -112,7 +129,13 @@ const Navbar = () => {
         {/* Mobile menu */}
         {isOpen && (
           <div className="md:hidden mt-2">
-            <div className="backdrop-blur-sm bg-gray-900/50 rounded-3xl border border-blue-500/30 shadow-lg px-4 py-3 space-y-1">
+            <div
+              className={`backdrop-blur-md rounded-3xl border shadow-lg px-4 py-3 space-y-1 transition-all duration-300 ${
+                scrolled
+                  ? "bg-gray-900/90 border-blue-500/50 shadow-2xl shadow-blue-500/20"
+                  : "bg-gray-900/50 border-blue-500/30"
+              }`}
+            >
               {navLinks.map((link) => {
                 const isActive = activeSection === link.href.substring(1);
                 return (
