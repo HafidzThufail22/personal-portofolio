@@ -24,7 +24,7 @@ const LoadingScreen = ({ onComplete }) => {
         // Progress lebih lambat
         return prev + Math.random() * 8;
       });
-    }, 150);
+    }, 100);
 
     return () => clearInterval(interval);
   }, [onComplete]);
@@ -62,24 +62,23 @@ const LoadingScreen = ({ onComplete }) => {
           </div>
         </div>
 
-        {/* Welcome text */}
-        <div className="text-center mb-8 px-4">
-          <h1 className="text-4xl md:text-6xl font-heading font-bold mb-2 text-white animate-slide-up">
-            Welcome To
-          </h1>
-          <h2 className="text-4xl md:text-6xl font-heading font-bold bg-gradient-to-r from-blue-300 via-blue-500 to-cyan-400 bg-clip-text text-transparent animate-slide-up animation-delay-200">
-            Hafidz Thufail Website
-          </h2>
-        </div>
+        {/* Welcome text - Scrolling */}
+        {/* <div className="mb-8 px-4 overflow-hidden w-full max-w-4xl">
+          <div className="whitespace-nowrap animate-marquee">
+            <h1 className="text-4xl md:text-6xl font-heading font-bold bg-gradient-to-r from-blue-300 via-blue-500 to-cyan-400 bg-clip-text text-transparent inline-block">
+              Welcome To My Website
+            </h1>
+          </div>
+        </div> */}
 
-        {/* URL badge */}
+        {/* URL badge
         <div className="flex justify-center mb-12 animate-fade-in animation-delay-400">
           <div className="px-6 py-2 rounded-lg bg-blue-500/10 backdrop-blur-sm border border-blue-500/30">
             <span className="text-blue-400 text-sm">
               🌐 https://hafidzthufail.vercel.app/
             </span>
           </div>
-        </div>
+        </div> */}
 
         {/* Loading area */}
         <div className="flex flex-col items-center justify-center">
@@ -87,14 +86,14 @@ const LoadingScreen = ({ onComplete }) => {
           <div className="relative z-10 mb-8 flex justify-center">
             <div className="w-20 h-20 border-4 border-gray-700 border-t-blue-500 rounded-full animate-spin"></div>
             <div
-              className="absolute inset-0 w-20 h-20 border-4 border-transparent border-r-cyan-400 rounded-full animate-spin mx-auto"
+              className="absolute inset-0 w-20 h-20 border-4 border-transparent border-r-blue-500 rounded-full animate-spin mx-auto"
               style={{ animationDuration: "1.5s" }}
             ></div>
           </div>
 
           {/* Loading text */}
           <h3 className="text-xl font-heading font-bold mb-4 text-center bg-gradient-to-r from-blue-300 via-blue-500 to-cyan-400 bg-clip-text text-transparent">
-            Loading Portfolio
+            Loading...
           </h3>
 
           {/* Progress bar */}

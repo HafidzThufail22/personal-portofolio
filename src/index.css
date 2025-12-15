@@ -57,6 +57,19 @@ h6 {
   .animate-slide-in-right {
     animation: slideInRight 0.8s ease-out;
   }
+
+  .animate-marquee {
+    animation: marquee 15s linear infinite;
+  }
+}
+
+@keyframes marquee {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
 }
 
 /* Intersection Observer triggered animations - Bidirectional */
