@@ -23,6 +23,7 @@ import projectToDoList from "../../assets/images/projects/to-do list app project
 import projectCourseWebsite from "../../assets/images/projects/course website project.png";
 import projectEyeSky from "../../assets/images/projects/Eye-Sky Project.jpg";
 import projectCompanyProfile from "../../assets/images/projects/company-profile.png";
+import projectCoffeshop from "../../assets/images/projects/Coffe Shop Mobile App.jpg";
 
 const Projects = () => {
   // State untuk tab filter
@@ -40,7 +41,14 @@ const Projects = () => {
       title: "Personal Portfolio Website",
       description:
         "Modern and responsive portfolio website showcasing my skills, projects, and experience with smooth animations and interactive UI.",
-      tech: ["React.Js", "Javascript","Tailwind CSS", "React Bits","Framer Motion","GSAP"],
+      tech: [
+        "React.Js",
+        "Javascript",
+        "Tailwind CSS",
+        "React Bits",
+        "Framer Motion",
+        "GSAP",
+      ],
       image: projectPersonalPorto,
       link: "https://hafidzthufail-personalportofolio.vercel.app/", // Ganti dengan link live demo portfolio Anda
       github: "https://github.com/HafidzThufail22/personal-portofolio", // Link repo GitHub portfolio (fixed typo)
@@ -52,7 +60,19 @@ const Projects = () => {
       tech: ["Figma", "UI/UX Design", "Prototyping", "User Research"],
       image: projectEyeSky,
       link: "/design-project/Eye-Sky Project.pdf", // Link ke PDF design project
-      figma: "https://www.figma.com/design/KEsysXlXkPikbZrqALOOrk/DeadlineLovers-Team?node-id=202-2&t=XPDWoqt8t8Erndq4-1", // Ganti dengan link Figma Anda
+      figma:
+        "https://www.figma.com/design/KEsysXlXkPikbZrqALOOrk/DeadlineLovers-Team?node-id=202-2&t=XPDWoqt8t8Erndq4-1", // Ganti dengan link Figma Anda
+      isUIUX: true, // Menandai sebagai project UI/UX
+    },
+    {
+      title: "Coffe Shop Mobile App",
+      description:
+        "A premium coffee ordering app with a sleek dark-themed interface, streamlining the user journey from customization to pick-up.",
+      tech: ["Figma", "UI/UX Design", "Prototyping", "User Research"],
+      image: projectCoffeshop,
+      link: "#", // Link ke PDF design project
+      figma:
+        "https://www.figma.com/design/vmLYhFtz9bgzurJjCETeqC/Coffe-Shop-Mobile-App-Design?node-id=0-1&t=2YMkTOfxwnyNYum9-1", // Ganti dengan link Figma Anda
       isUIUX: true, // Menandai sebagai project UI/UX
     },
     {
@@ -63,15 +83,6 @@ const Projects = () => {
       image: projectReservationSystem,
       link: "https://your-reservation-demo.com",
       github: "https://github.com/HafidzThufail22/FutsalZone",
-    },
-    {
-      title: "Article Website",
-      description:
-        "City identity article website featuring local culture, history, and tourism information with clean and responsive design.",
-      tech: ["HTML", "CSS"],
-      image: projectArticleWebsite,
-      link: "https://kulon-progo.vercel.app/",
-      github: "https://github.com/HafidzThufail22/KulonProgo",
     },
     {
       title: "To-Do List App",
@@ -91,8 +102,7 @@ const Projects = () => {
     },
     {
       title: "Company Profile Website",
-      description:
-        "Company profile website with clean and responsive design.",
+      description: "Company profile website with clean and responsive design.",
       tech: ["Next Js", "Typescript", "Framer Motion", "Tailwind CSS"],
       image: projectCompanyProfile,
       link: "https://lpk-sadewa.vercel.app/",
@@ -107,7 +117,16 @@ const Projects = () => {
       link: "#",
       github: "https://github.com/HafidzThufail22/toserba-management",
     },
-     {
+    {
+      title: "Article Website",
+      description:
+        "City identity article website featuring local culture, history, and tourism information with clean and responsive design.",
+      tech: ["HTML", "CSS"],
+      image: projectArticleWebsite,
+      link: "https://kulon-progo.vercel.app/",
+      github: "https://github.com/HafidzThufail22/KulonProgo",
+    },
+    {
       title: "Course Website",
       description:
         "Health tracking app with workout plans and progress visualization.",
@@ -224,7 +243,8 @@ const Projects = () => {
   // Data yang ditampilkan berdasarkan tab aktif
   const allItems = activeTab === "projects" ? projects : certificates;
   const showAll = activeTab === "projects" ? showAllProjects : showAllCerts;
-  const setShowAll = activeTab === "projects" ? setShowAllProjects : setShowAllCerts;
+  const setShowAll =
+    activeTab === "projects" ? setShowAllProjects : setShowAllCerts;
   const displayItems = showAll ? allItems : allItems.slice(0, 6);
   const hasMoreItems = allItems.length > 6;
 
@@ -287,7 +307,13 @@ const Projects = () => {
               className="backdrop-blur-sm bg-gray-900/20 border border-blue-500/20 rounded-xl overflow-hidden hover:shadow-2xl hover:shadow-blue-500/30 hover:border-blue-500/50 transition-all duration-300 transform hover:-translate-y-2 group relative"
             >
               {/* Item Image/Icon */}
-              <div className={`h-48 flex items-center justify-center overflow-hidden relative ${activeTab === "certificates" ? "bg-white" : "bg-gradient-to-br from-blue-600/20 to-cyan-400/20"}`}>
+              <div
+                className={`h-48 flex items-center justify-center overflow-hidden relative ${
+                  activeTab === "certificates"
+                    ? "bg-white"
+                    : "bg-gradient-to-br from-blue-600/20 to-cyan-400/20"
+                }`}
+              >
                 {item.isPdf ? (
                   /* PDF Thumbnail - show PDF icon */
                   <div className="flex flex-col items-center justify-center">
@@ -297,9 +323,11 @@ const Projects = () => {
                       viewBox="0 0 24 24"
                       xmlns="http://www.w3.org/2000/svg"
                     >
-                      <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8l-6-6zm-1 2l5 5h-5V4zM8.5 13a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3zm2.5 6H7v-1c0-1.1.9-2 2-2h1c1.1 0 2 .9 2 2v1h-1zm5-3h-4v-1h4v1zm0-2h-4v-1h4v1z"/>
+                      <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8l-6-6zm-1 2l5 5h-5V4zM8.5 13a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3zm2.5 6H7v-1c0-1.1.9-2 2-2h1c1.1 0 2 .9 2 2v1h-1zm5-3h-4v-1h4v1zm0-2h-4v-1h4v1z" />
                     </svg>
-                    <span className="text-blue-400 text-sm mt-2 font-medium">PDF Document</span>
+                    <span className="text-blue-400 text-sm mt-2 font-medium">
+                      PDF Document
+                    </span>
                   </div>
                 ) : (
                   <img
@@ -385,7 +413,11 @@ const Projects = () => {
                       target="_blank"
                       rel="noopener noreferrer"
                       className="w-12 h-12 backdrop-blur-sm bg-blue-500/10 border border-blue-500 rounded-full flex items-center justify-center hover:bg-blue-500/20 hover:border-blue-400 transition-all transform hover:scale-110"
-                      aria-label={item.isPdf ? "View PDF Certificate" : "View Full Certificate"}
+                      aria-label={
+                        item.isPdf
+                          ? "View PDF Certificate"
+                          : "View Full Certificate"
+                      }
                     >
                       <svg
                         className="w-6 h-6 text-blue-400"
