@@ -2,6 +2,9 @@ import { useState, useEffect } from "react";
 import Particles from "../Particles";
 import TrueFocus from "../TrueFocus";
 
+// Import CV
+import cvFile from "../../assets/cv/CV-Hafidz Thufail Nur Ikhsan.pdf";
+
 const Home = () => {
   // Simple state untuk trigger animations on mount
   const [isLoaded, setIsLoaded] = useState(false);
@@ -84,10 +87,12 @@ const Home = () => {
             View My Work
           </a>
           <a
-            href="#"
+            href={cvFile}
+            target="_blank"
+            rel="noopener noreferrer"
             className="px-8 py-3 backdrop-blur-sm bg-gray-900/20 border border-blue-500/50 text-gray-300 rounded-lg font-semibold hover:text-blue-400 hover:border-blue-500 transform hover:scale-105 transition-all duration-300"
           >
-            Download CV
+            Lihat CV
           </a>
         </div>
         <div

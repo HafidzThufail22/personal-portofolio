@@ -68,7 +68,7 @@ const Projects = () => {
       title: "Coffe Shop Mobile App",
       description:
         "A premium coffee ordering app with a sleek dark-themed interface, streamlining the user journey from customization to pick-up.",
-      tech: ["Figma", "UI/UX Design", "Prototyping", "User Research"],
+      tech: ["Figma", "UI/UX Design", "Prototyping",],
       image: projectCoffeshop,
       link: "#", // Link ke PDF design project
       figma:
@@ -76,13 +76,13 @@ const Projects = () => {
       isUIUX: true, // Menandai sebagai project UI/UX
     },
     {
-      title: "Reservation System",
+      title: "Dashboard Toserba",
       description:
-        "Futsal court booking system with real-time availability and automated scheduling management.",
-      tech: ["PHP", "MySQL", "Tailwind CSS"],
-      image: projectReservationSystem,
-      link: "https://your-reservation-demo.com",
-      github: "https://github.com/HafidzThufail22/FutsalZone",
+        "Admin dashboard for retail with inventory management and automated reorder system.",
+      tech: ["PHP", "Laravel", "MySQL", "Bootstrap"],
+      image: projectDashboardToserba,
+      link: "#",
+      github: "https://github.com/HafidzThufail22/toserba-management",
     },
     {
       title: "To-Do List App",
@@ -108,14 +108,14 @@ const Projects = () => {
       link: "https://lpk-sadewa.vercel.app/",
       github: "https://github.com/HafidzThufail22/company-profile",
     },
-    {
-      title: "Dashboard Toserba",
+     {
+      title: "Reservation System",
       description:
-        "Admin dashboard for retail with inventory management and automated reorder system.",
-      tech: ["PHP", "Laravel", "MySQL", "Bootstrap"],
-      image: projectDashboardToserba,
-      link: "#",
-      github: "https://github.com/HafidzThufail22/toserba-management",
+        "Futsal court booking system with real-time availability and automated scheduling management.",
+      tech: ["PHP", "MySQL", "Tailwind CSS"],
+      image: projectReservationSystem,
+      link: "https://your-reservation-demo.com",
+      github: "https://github.com/HafidzThufail22/FutsalZone",
     },
     {
       title: "Article Website",
@@ -126,15 +126,15 @@ const Projects = () => {
       link: "https://kulon-progo.vercel.app/",
       github: "https://github.com/HafidzThufail22/KulonProgo",
     },
-    {
-      title: "Course Website",
-      description:
-        "Health tracking app with workout plans and progress visualization.",
-      tech: ["HTML", "CSS", "JavaScript"],
-      image: projectCourseWebsite,
-      link: "https://global-mandiri-official.vercel.app/",
-      github: "https://github.com/HafidzThufail22/GlobalMandiri-Official",
-    },
+    // {
+    //   title: "Course Website",
+    //   description:
+    //     "Health tracking app with workout plans and progress visualization.",
+    //   tech: ["HTML", "CSS", "JavaScript"],
+    //   image: projectCourseWebsite,
+    //   link: "https://global-mandiri-official.vercel.app/",
+    //   github: "https://github.com/HafidzThufail22/GlobalMandiri-Official",
+    // },
   ];
 
   // Data Certificates
