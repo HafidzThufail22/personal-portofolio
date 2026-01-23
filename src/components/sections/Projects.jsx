@@ -68,7 +68,7 @@ const Projects = () => {
       title: "Coffe Shop Mobile App",
       description:
         "A premium coffee ordering app with a sleek dark-themed interface, streamlining the user journey from customization to pick-up.",
-      tech: ["Figma", "UI/UX Design", "Prototyping",],
+      tech: ["Figma", "UI/UX Design", "Prototyping"],
       image: projectCoffeshop,
       link: "#", // Link ke PDF design project
       figma:
@@ -108,7 +108,7 @@ const Projects = () => {
       link: "https://lpk-sadewa.vercel.app/",
       github: "https://github.com/HafidzThufail22/company-profile",
     },
-     {
+    {
       title: "Reservation System",
       description:
         "Futsal court booking system with real-time availability and automated scheduling management.",
